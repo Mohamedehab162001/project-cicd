@@ -24,5 +24,10 @@ jobs:
    steps:
      - name: build
        run: echo 'deploying'
-  
+  jobaya5:
+   needs: jobaya1
+   runs-on: ubuntu-latest
+   steps:
+     - name: install node
+       uses: actions/setup-node@v4  
 
