@@ -7,29 +7,30 @@ jobs:
      - name: get code
        uses: actions/checkout@v4.2.2
   jobaya2:
-   needs: jobaya5
+   needs: jobaya1
+   runs-on: ubuntu-latest
+   steps:
+     - name: install node
+       uses: actions/setup-node@v4  
+  jobaya3:
+   needs: jobaya2
    runs-on: ubuntu-latest
    steps:
      - name: install depedencies
        run: npm ci
   
    
-  jobaya3:
-   needs: jobaya2
-   runs-on: ubuntu-latest
-   steps:
-     - name: testing
-       run: npm test
   jobaya4:
    needs: jobaya3
    runs-on: ubuntu-latest
    steps:
-     - name: build
-       run: echo 'deploying'
+     - name: testing
+       run: npm test
   jobaya5:
-   needs: jobaya1
+   needs: jobaya4
    runs-on: ubuntu-latest
    steps:
-     - name: install node
-       uses: actions/setup-node@v4  
+     - name: build
+       run: echo 'deploying'
+
 
