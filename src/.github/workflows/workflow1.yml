@@ -6,6 +6,12 @@ jobs:
    steps:
      - name: get code
        uses: actions/checkout@v4.2.2
+  jobaya5:
+   needs: jobaya1
+   runs-on: ubuntu-latest
+   steps:
+     - name: install node
+       uses: actions/setup-node@v4
   jobaya2:
    needs: jobaya1
    runs-on: ubuntu-latest
@@ -24,11 +30,6 @@ jobs:
    steps:
      - name: build
        run: echo 'deploying'
-  jobaya5:
-   needs: jobaya1
-   runs-on: ubuntu-latest
-   steps:
-     - name: install node
-       uses: actions/setup-node@v4
+
 
 
