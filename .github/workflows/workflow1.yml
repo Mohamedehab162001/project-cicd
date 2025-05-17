@@ -14,5 +14,7 @@ jobs:
        run: npm run test
      - name: build
        run: npm run build
+     - name: deploy
+       run: echo 'hello'
 
 
