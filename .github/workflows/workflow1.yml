@@ -11,7 +11,9 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - name: install depedencies
-       run: npm install
+       run: npm ci
+  
+   
   jobaya3:
    needs: jobaya2
    runs-on: ubuntu-latest
