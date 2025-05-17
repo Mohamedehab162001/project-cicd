@@ -1,0 +1,7 @@
+name: woorkfloooow2
+on: workflow_dispatch
+jobs:
+  ko:
+   steps:
+     - name: get info
+       run: echo ${{toJSON(github)}}
