@@ -1,0 +1,28 @@
+name: workfloooow
+on: push
+jobs:
+  jobaya1:
+   runs-on: ubuntu-latest
+   steps:
+     - name: get code
+       uses: actions/checkout@v4.2.2
+  jobaya2:
+   needs: jobaya1
+   runs-on: ubuntu-latest
+   steps:
+     - name: install depedencies
+       run: npm install
+  jobaya3:
+   needs: jobaya2
+   runs-on: ubuntu-latest
+   steps:
+     - name: testing
+       run: npm test
+  jobaya4:
+   needs: jobaya3
+   runs-on: ubuntu-latest
+   steps:
+     - name: build
+       run: echo 'deploying'
+  
+
